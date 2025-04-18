@@ -1,7 +1,7 @@
 #include <climits>
 #include <iostream>
 
-#include "queue.h"
+#include "Array/queue.hpp"
 
 
 Queue::Queue(int N) : array{std::make_unique<Element[]>(N)}, first{0}, last{0}, N{N} {}
@@ -48,6 +48,7 @@ void Queue::deleteKth(int k) {
     if ((k + first) % N == first) first = (first + 1) % N;
     last = (last - 1 + N) % N;
 }
+
 void Queue::print() const {
     int len = first < last ? last - first : last - first + N;
 

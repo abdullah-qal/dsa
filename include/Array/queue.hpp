@@ -1,8 +1,8 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
 
 #include <memory>
-#include "element.h"
+#include "element.hpp"
 
 class Queue {
     std::unique_ptr<Element[]> array;
@@ -10,7 +10,7 @@ class Queue {
 
     public: 
         Queue(int N);
-
+        
         bool isFull();
         bool isEmpty();
 

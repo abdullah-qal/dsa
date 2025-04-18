@@ -1,7 +1,13 @@
 #include <iostream>
-#include "queue.h"
+
+#include "List/queue.hpp"
 
 Queue::Queue() : first{nullptr}, last{nullptr} {}
+
+Queue::~Queue() {
+    while (first) 
+        first = std::move(first->next);
+}
 
 bool Queue::isEmpty() { return first == nullptr; }
 

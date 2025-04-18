@@ -1,6 +1,6 @@
 CXX = clang++
-CXXFLAGS = -ITree/include -std=c++23 -Wall -Wextra -O2
-SRC = $(wildcard ./*.cpp Tree/src/*.cpp)
+CXXFLAGS = -Iinclude -std=c++23 -Wall -Wextra -O2
+SRC = $(wildcard ./*.cpp src/Array/*.cpp)
 OBJ = $(SRC:.cpp=.o)
 BIN = binary
 

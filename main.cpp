@@ -1,25 +1,17 @@
 #include <string>
 #include <iostream>
 
- // #include "Array/stack.h"
-// #include "List/stack.h"
-
-// #include "Array/queue.h"
-// #include "List/queue.h"
-
-#include "tree.hpp"
-#include "tree_node.hpp"
-
-using namespace std;
+#include "Array/hash.hpp"
+// #include "List/hash.hpp"
 
 int main() {
-    Tree tree;
-    tree.insertNode(10);
-    tree.insertNode(10);
-    tree.insertNode(3);
-    tree.insertNode(5);
-    tree.insertNode(9);
 
-    cout << tree.depthOfNode(10);
+    Hash h{10};
+    h.insertValue(3);
+    h.insertValue(3);
+
+    std::cout << h.numberOfEmptySlots() << "\n";
+    h.deleteAll(5);
+    std::cout << h.numberOfEmptySlots() << "\n";
     return 0;
 }

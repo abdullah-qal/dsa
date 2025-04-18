@@ -1,16 +1,16 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef STACK_HPP
+#define STACK_HPP
 
-#include "element.h"
+#include <memory>
+
+#include "element.hpp"
 
 class Stack {
-    Element *array;
-    int top;
-    int N;
+    std::unique_ptr<Element[]> array;
+    int top, N;
 
     public: 
         Stack(int N);
-        ~Stack();
 
         Element getTop();
         int getSize();

@@ -1,9 +1,9 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
 
 #include <memory>
-#include "node.h"
 
+#include "List/node.hpp"
 
 class Queue {
     std::unique_ptr<Node> first;
@@ -11,7 +11,8 @@ class Queue {
 
     public: 
         Queue();
-
+        ~Queue();
+        
         bool isEmpty();
 
         void enqueue(int value);

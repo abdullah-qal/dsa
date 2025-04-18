@@ -1,8 +1,8 @@
-#include "stack.h"
 #include <limits.h>
 
-Stack::Stack(int N) : N{N}, top{-1}, array{new Element[N]} {}
-Stack::~Stack() { delete [] array; }
+#include "Array/stack.hpp"
+
+Stack::Stack(int N) :array{std::make_unique<Element[]>(N)}, top{-1} {}
 
 Element Stack::getTop() { return array[top]; }
 int Stack::getSize() { return N; }
@@ -17,14 +17,15 @@ Element Stack::pop() {
 void Stack::push(Element e) { if (!isFull()) array[++top] = e; }
 
 void Stack::enlarge() {
-    Element *tmp = array;
+    int oldN = N;
+    std::unique_ptr<Element[]> tmp = std::move(array);
     N *= 2;
+    array = std::make_unique<Element[]>(N);
 
-    array = new Element[N];
-    for (int i = 0; i < N; ++i) 
+    for (int i = 0; i < oldN; ++i) 
         array[i] = tmp[i];
-    delete [] tmp;
 }
+
 // Q5
 Element Stack::bottom() {
     Stack to_stack = Stack(top - 1);

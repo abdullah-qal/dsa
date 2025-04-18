@@ -38,6 +38,7 @@ class TreeNode {
         auto higherThanX(int x) -> int; // Q9
         auto numberOfDuplicates() -> int; // Q10
         auto sumOfTree(int x) -> int; // Q11 
+        auto pathList()
 };
 
 #endif 
