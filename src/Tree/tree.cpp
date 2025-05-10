@@ -102,7 +102,7 @@ auto Tree::getParent(int value) -> TreeNode * {
 // }   
 
 
-// Inorder DFS
+// // Inorder DFS
 // auto Tree::nodeCountWithStack() -> int {
 //     TreeNode *d = root.get();
 //     Stack s = Stack(10);
@@ -110,7 +110,7 @@ auto Tree::getParent(int value) -> TreeNode * {
 //     int count = 0;
 //     for (; d || !s.isEmpty(); d = d->right.get()) {
 //         for (; d; d = d->left.get()) s.push(d);
-//         d = s.pop().getData();
+//         d = s.pop();
 //         count++;
 //     }
 // }

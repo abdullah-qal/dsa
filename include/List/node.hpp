@@ -13,8 +13,6 @@ class Node {
 
 public:
     Node(int data);
-
-    int getData() { return data; }
 };
 
 #endif 

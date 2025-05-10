@@ -13,13 +13,23 @@ class Queue {
         Queue();
         ~Queue();
         
-        bool isEmpty();
+        Queue(Queue const &) = delete;
+        Queue &operator=(Queue const &) = delete;
 
-        void enqueue(int value);
-        std::unique_ptr<Node> dequeue();
+        Queue(Queue &&) = default;
+        Queue &operator=(Queue &&) = default;
 
-        void print() const;
-        void insertAfterKth(int k, int value);
+        auto isEmpty() -> bool;
+
+        auto enqueue(int value) -> void;
+        auto dequeue() -> std::unique_ptr<Node>;
+
+        auto print() const -> void;
+        auto insertAfterKth(int k, int value) -> void; // Q1
+        auto minimum() -> int; // Q3
+        auto dequeue2nd() -> std::unique_ptr<Node>; // Q4
+        auto divideQueue() -> Queue; // Q6
+        auto removeAll(Queue *list, int size) -> void; // Q14
 };
 
 #endif 

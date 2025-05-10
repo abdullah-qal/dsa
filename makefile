@@ -1,6 +1,6 @@
 CXX = clang++
-CXXFLAGS = -Iinclude -std=c++23 -Wall -Wextra -O2
-SRC = $(wildcard ./*.cpp src/Array/*.cpp)
+CXXFLAGS = -Iinclude/Heap -std=c++23 -Wall -Wextra -O2
+SRC = $(wildcard ./*.cpp src/Heap/*.cpp)
 OBJ = $(SRC:.cpp=.o)
 BIN = binary
 

@@ -10,17 +10,23 @@ class Queue {
 
     public: 
         Queue(int N);
-        
-        bool isFull();
-        bool isEmpty();
+                
+        auto isFull() -> bool;
+        auto isEmpty() -> bool;
 
-        void enqueue(int value);
-        Element dequeue();
+        auto enqueue(int value) -> void;
+        auto dequeue() -> Element;
 
-        void print() const;
+        auto print() const -> void;
 
-        void insertAfterKth(int k, int value);
-        void deleteKth(int k);
+        auto insertAfterKth(int k, int value) -> void; // Q1
+        auto deleteKth(int k) -> void; // Q2
+        auto minimum() -> int; // Q3
+        auto dequeue2nd() -> Element; // Q4
+        auto insertAfterLargest(int data) -> void; // Q5
+        auto divideQueue() -> Queue; // Q6
+        auto removeOddIndexed() -> void; // Q7
+        auto copyPaste(Queue const &src, int index) -> void; // Q9
 };
 
 #endif 

@@ -1,17 +1,12 @@
 #include <string>
 #include <iostream>
 
-#include "Array/hash.hpp"
-// #include "List/hash.hpp"
+#include "heap.hpp"
 
 int main() {
-
-    Hash h{10};
-    h.insertValue(3);
-    h.insertValue(3);
-
-    std::cout << h.numberOfEmptySlots() << "\n";
-    h.deleteAll(5);
-    std::cout << h.numberOfEmptySlots() << "\n";
+    Heap<MaxComparison> h{100};
+    h.insert(3);
+    h.printHeap();
+    
     return 0;
 }

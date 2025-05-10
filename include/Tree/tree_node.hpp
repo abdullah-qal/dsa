@@ -3,6 +3,8 @@
 
 #include <memory>
 
+#include "List/linked_list.hpp"
+
 class TreeNode {
     int data;
     std::unique_ptr<TreeNode> left, right;
@@ -38,7 +40,7 @@ class TreeNode {
         auto higherThanX(int x) -> int; // Q9
         auto numberOfDuplicates() -> int; // Q10
         auto sumOfTree(int x) -> int; // Q11 
-        auto pathList()
+        auto pathList(LinkedList &l) -> void; // Q13
 };
 
 #endif 

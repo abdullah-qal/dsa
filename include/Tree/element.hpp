@@ -12,8 +12,6 @@ class Element {
     public:
         Element(TreeNode *data);
         Element();    
-
-        TreeNode *getData();
 };
 
 #endif

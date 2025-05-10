@@ -1,8 +1,8 @@
 #include <iostream>
 #include <utility> 
 
-#include "tree_node.hpp"
-#include "queue.hpp"
+#include "Tree/tree_node.hpp"
+#include "Tree/queue.hpp"
 
 TreeNode::TreeNode(int data) : data{data}, left{nullptr}, right{nullptr} {}
 
@@ -160,7 +160,17 @@ auto TreeNode::numberOfDuplicates() -> int {
 auto TreeNode::sumOfTree(int x) -> int {
     if (data >= x)
         return left ? left->sumOfTree(x) : 0;
-    return data                                + 
+    return data + 
            (left  ? left->sumOfTree(x)  : 0) +
            (right ? right->sumOfTree(x) : 0);
+}
+
+auto TreeNode::pathList(LinkedList &l) -> void {
+    l.insertLast(data); 
+
+    if (data % 2 == 1) {
+        if (left) left->pathList(l);  
+    } else {
+        if (right) right->pathList(l); 
+    }
 }
